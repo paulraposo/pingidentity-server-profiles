@@ -19,12 +19,18 @@ echo "PingDataSync - 127.0.0.1:${LDAPS_PORT} appears available"
 #
 # Wait for PingDirectory before continuing
 #
+PD0_HOSTNAME=${PD_ENGINE_PRIVATE_HOSTNAME}-0:${PD_ENGINE_PRIVATE_HOSTNAME}-cluster
 while true; do
-    echo "Waiting for PingDirectory - ${PD_ENGINE_PRIVATE_HOSTNAME}:${PD_ENGINE_PRIVATE_PORT_LDAPS}..."
-    wait-for "${PD_ENGINE_PRIVATE_HOSTNAME}:${PD_ENGINE_PRIVATE_PORT_LDAPS}" -q -t 30 && break
+    echo "Waiting for PingDirectory - ${PD0_HOSTNAME}:${PD_ENGINE_PRIVATE_PORT_LDAPS}..."
+    wait-for "${PD0_HOSTNAME}:${PD_ENGINE_PRIVATE_PORT_LDAPS}" -q -t 30 && break
 done
-echo "PingDirectory - ${PD_ENGINE_PRIVATE_HOSTNAME}:${PD_ENGINE_PRIVATE_PORT_LDAPS} appears available"
+echo "PingDirectory - ${PD0_HOSTNAME}:${PD_ENGINE_PRIVATE_PORT_LDAPS} appears available"
 sleep 2
+
+
+#if test "${RUN_PLAN}" = "START"; then
+#   PUT YOUR CODE HERE
+#fi
 
 #
 # Set the sync pipe at the beginning of the changelog
@@ -40,3 +46,4 @@ dsconfig set-sync-pipe-prop \
     --pipe-name pingdirectory_source-to-pingdirectory_destination  \
     --set started:true \
     --no-prompt
+
