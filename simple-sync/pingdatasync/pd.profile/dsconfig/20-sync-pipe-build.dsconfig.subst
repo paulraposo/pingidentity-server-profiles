@@ -12,7 +12,7 @@ dsconfig create-external-server \
 	--set server-host-name:${PD_ENGINE_PRIVATE_HOSTNAME}-0.${PD_ENGINE_PRIVATE_HOSTNAME}-cluster \
     --set server-port:${PD_ENGINE_PRIVATE_PORT_LDAPS} \
 	--set bind-dn:cn=sync \
-    --set "password:AABkwRkIRfApR+R1uZPSciaUPmtEtTzjC/4=" \
+    --set "password:2FederateM0re" \
     --set authorization-method:none \
     --set location:${LOCATION} \
     --set connection-security:ssl \
