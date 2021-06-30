@@ -27,10 +27,14 @@ done
 echo "PingDirectory - ${PD0_HOSTNAME}:${PD_ENGINE_PRIVATE_PORT_LDAPS} appears available"
 sleep 2
 
-
-#if test "${RUN_PLAN}" = "START"; then
-#   PUT YOUR CODE HERE
-#fi
+#
+# Test if this is the first time the server is deployed
+#
+if test "${RUN_PLAN}" = "START"; then
+   echo RUN_PLAN is START
+else
+   echo RUN_PLAN is NOT START
+fi
 
 #
 # Set the sync pipe at the beginning of the changelog
