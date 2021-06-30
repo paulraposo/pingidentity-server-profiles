@@ -33,7 +33,7 @@ sleep 2
 if test "${RUN_PLAN}" = "START"; then
    echo RUN_PLAN is START
 else
-   echo RUN_PLAN is NOT START
+   echo RUN_PLAN is NOT START: ${RUN_PLAN}
 fi
 
 #
