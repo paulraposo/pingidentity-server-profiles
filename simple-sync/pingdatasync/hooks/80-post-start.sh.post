@@ -39,9 +39,9 @@ fi
 #
 # Set the sync pipe at the beginning of the changelog
 #
-realtime-sync set-startpoint \
-    --beginning-of-changelog \
-    --pipe-name pingdirectory_source-to-pingdirectory_destination
+#realtime-sync set-startpoint \
+#    --end-of-changelog \
+#    --pipe-name pingdirectory_source-to-pingdirectory_destination
 
 #
 # Enable the sync pipe
