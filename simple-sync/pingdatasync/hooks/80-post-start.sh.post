@@ -43,6 +43,9 @@ fi
 #    --end-of-changelog \
 #    --pipe-name pingdirectory_source-to-pingdirectory_destination
 
+# test helm env variable
+echo PR_TEST_VAR: ${PR_TEST_VAR}
+
 #
 # Enable the sync pipe
 #
